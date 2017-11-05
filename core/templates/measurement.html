@@ -8,4 +8,21 @@
   {{ form.as_p }}
   <input type="submit" value="Save measurement" />
 </form>
+
+<h3>Previous measurements</h3>
+  <table>
+    <tr>
+      <th>Height in m</th>
+      <th>Weight in kg</th>
+      <th>BMI</th>
+    </tr>
+    {% for measurement in measurements %}
+      <tr>
+        <td>{{ measurement.height_in_meters }}</td>
+        <td>{{ measurement.weight_in_kilograms }}</td>
+        <td>{{ measurement.bmi }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
 {% endblock %}

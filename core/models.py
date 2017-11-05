@@ -7,3 +7,6 @@ class BmiMeasurement(models.Model):
   weight_in_kilograms = models.FloatField()
   measured_at = models.DateField()
 
+  def bmi(self):
+    return self.weight_in_kilograms / self.height_in_meters ** 2
+

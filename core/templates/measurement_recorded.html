@@ -3,5 +3,20 @@
 {% block body %}
   <p>Your measurement has been saved.</p>
 
+  <table>
+    <tr>
+      <th>Height in m</th>
+      <th>Weight in kg</th>
+      <th>BMI</th>
+    </tr>
+    {% for measurement in measurements %}
+      <tr>
+        <td>{{ measurement.height_in_meters }}</td>
+        <td>{{ measurement.weight_in_kilograms }}</td>
+        <td>{{ measurement.bmi }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
   <p><a href="/measurement/">Save a new measurement</a></p>
 {% endblock %}
